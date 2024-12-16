@@ -1,8 +1,9 @@
 import React from 'react';
 
+// Testing with "this is testing"
 class App extends React.Component {
     render() {
-        return (<div className="test">this is test</div>);
+        return (<div className="test">this is testing</div>);
     }
 }
 
@@ -28,7 +29,7 @@ class Grid extends React.Component {
   }
 }
 
-
+// Testing Home as a component
 class Home extends React.Component {
     render() {
       return (

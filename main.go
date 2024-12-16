@@ -18,6 +18,7 @@ import (
 // 	log.Fatal(http.ListenAndServe(":10000", nil))
 // }
 
+// Main function to start the web server and set up routes
 func main() {
 
 	// Set the router as the default one shipped with Gin
@@ -36,12 +37,14 @@ func main() {
 		})
 	}
 
-	// api.GET("/", homepage)
-	// api.POST("/findpath/", findpath)
+	// Register route group for the API
+	api.GET("/", homepage)
+	api.POST("/findpath/", findpath)
 
 	router.Run(":3000")
 }
 
+// Testing homepage route
 func homepage(c *gin.Context) {
 	c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, gin.H{
@@ -49,6 +52,7 @@ func homepage(c *gin.Context) {
 	})
 }
 
+// Testing findpath
 func findpath(c *gin.Context) {
 	c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, gin.H{
